@@ -4,6 +4,7 @@ import {Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'; //Router
 import {Home} from './components/home/home';
 import {About} from './components/about/about';
 import {RepoBrowser} from './components/repo-browser/repo-browser';
+import Logger from './utils/logger.service';
 
 @Component({
   selector: 'seed-app',
@@ -21,8 +22,10 @@ import {RepoBrowser} from './components/repo-browser/repo-browser';
 
 export class SeedApp {
 
+  private _log: Logger = new Logger('SeedAppTest');
+
   constructor() {
-    ;
+    this._log.info('constructor')();
   }
 
 }

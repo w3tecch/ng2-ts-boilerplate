@@ -33,12 +33,12 @@ function startServer(root, port) {
 function buildDocs() {
   return gulp
     .src([
-      'src/**/*.ts',
-      'typings/browser.d.ts'
+      'src/**/*.ts'
+      //'typings/browser.d.ts'
     ])
     .pipe(typedoc({
       module: 'commonjs',
-      target: 'es6',
+      target: 'ES6',
       out: 'docs/',
       name: helpers.getPkg().name
     }));

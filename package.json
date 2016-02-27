@@ -3,7 +3,15 @@
   "version": "0.0.0",
   "description": "A simple starter Angular2 project",
   "scripts": {
-    "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 8080 --content-base src"
+    "start": "npm run server:dev",
+    "server": "npm run server:dev",
+    "server:dev": "webpack-dev-server --progress --profile --colors --display-error-details --display-cached  --content-base src/ --env dev",
+    "server:prod": "http-server dist --cors",
+    "build": "npm run build:dev",
+    "build:dev": "webpack --progress --profile --colors --display-error-details --display-cached",
+    "build:prod": "webpack --config webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached",
+    "test": "karma start",
+    "test:live": "karma start --auto-watch --no-single-run"
   },
   "repository": {
     "type": "git",
@@ -76,7 +84,7 @@
     "tslint": "^3.5.0",
     "tslint-loader": "^2.1.0",
     "typedoc": "^0.3.12",
-    "typescript": "^1.7.3",
+    "typescript": "1.7.5",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0",
     "yargs": "^4.2.0"
