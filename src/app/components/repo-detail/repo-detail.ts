@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
-import {Http} from 'angular2/http';
+//import {Http} from 'angular2/http';
 import {Github} from '../../services/github';
 
 @Component({
@@ -11,10 +11,12 @@ import {Github} from '../../services/github';
   directives: [ROUTER_DIRECTIVES],
   pipes: []
 })
+
 export class RepoDetail {
   repoDetails = {};
-  constructor(routeParams:RouteParams, github: Github) {
-    github.getRepoForOrg(routeParams.get('org'),routeParams.get('name'))
+
+  constructor(routeParams: RouteParams, github: Github) {
+    github.getRepoForOrg(routeParams.get('org'), routeParams.get('name'))
       .subscribe(repoDetails => {
         this.repoDetails = repoDetails;
       });

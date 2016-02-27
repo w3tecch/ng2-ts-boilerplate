@@ -13,20 +13,23 @@ import {Github} from '../../services/github';
   directives: [ROUTER_DIRECTIVES],
   pipes: []
 })
+
 @RouteConfig([
-	new Route({path: '/:org', component: RepoList, name: 'RepoList'}),
-	new Route({path: '/:org/:name', component: RepoDetail, name: 'RepoDetail' })
+  new Route({ path: '/:org', component: RepoList, name: 'RepoList' }),
+  new Route({ path: '/:org/:name', component: RepoDetail, name: 'RepoDetail' })
 ])
+
 export class RepoBrowser {
 
-  constructor(private router:Router, private github: Github) {}
-  
-  searchForOrg(orgName: string){
+  constructor(private router: Router, private github: Github) {
+  }
+
+  searchForOrg(orgName: string) {
     this.github.getOrg(orgName)
       .subscribe(({name}) => {
         console.log(name);
-        this.router.navigate(['RepoList', {org: orgName}])
-      })
+        this.router.navigate(['RepoList', { org: orgName }]);
+      });
   }
 
 }

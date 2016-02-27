@@ -8,8 +8,11 @@ import {Component} from 'angular2/core';
   directives: [],
   pipes: []
 })
+
 export class Home {
 
-  constructor() {}
+  constructor() {
+    ;
+  }
 
 }

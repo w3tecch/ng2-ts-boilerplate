@@ -11,9 +11,11 @@ import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
   directives: [ROUTER_DIRECTIVES],
   pipes: []
 })
+
 export class RepoList {
-  repos: Observable<any>
-  constructor(github: Github, params:RouteParams) {
+  repos: Observable<any>;
+
+  constructor(github: Github, params: RouteParams) {
     this.repos = github.getReposForOrg(params.get('org'));
   }
 }

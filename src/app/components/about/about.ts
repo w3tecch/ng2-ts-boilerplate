@@ -10,9 +10,10 @@ import {Http} from 'angular2/http';
   directives: [],
   pipes: []
 })
+
 export class About {
 
-  constructor(http:Http) {
-    
+  constructor(http: Http) {
+    ;
   }
 }
