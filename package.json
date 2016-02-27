@@ -9,7 +9,7 @@
     "server:prod": "http-server dist --cors",
     "build": "npm run build:dev",
     "build:dev": "webpack --progress --profile --colors --display-error-details --display-cached",
-    "build:prod": "webpack --config webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached",
+    "build:prod": "webpack --config webpack.build.config.js --progress --profile --colors --display-error-details --display-cached",
     "test": "karma start",
     "test:live": "karma start --auto-watch --no-single-run"
   },
@@ -57,6 +57,7 @@
     "karma-coverage": "^0.5.3",
     "karma-growl-reporter": "^0.1.1",
     "karma-jasmine": "^0.3.7",
+    "karma-mocha-reporter": "^1.2.2",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-sinon": "^1.0.4",
     "karma-sourcemap-loader": "^0.3.7",
