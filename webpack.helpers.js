@@ -1,12 +1,15 @@
 var path = require('path');
 var yargs = require('yargs').argv;
+var validateWebpackConfig = require('webpack-validator');
 
 var webpackHelpers = {
   getEnv: getEnv,
   getPkg: getPkg,
   root: root,
   getBanner: getBanner,
-  getMetadata: getMetadata
+  getMetadata: getMetadata,
+  validateWebpackConfig: validateWebpackConfig,
+  validate: validateWebpackConfig
 };
 
 function getEnv() {
