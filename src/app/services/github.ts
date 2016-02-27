@@ -7,19 +7,19 @@ export class Github {
   constructor(private http: Http) {
   }
 
-  getOrg(org: string) {
+  public getOrg(org: string): any {
     return this.makeRequest(`orgs/${org}`);
   }
 
-  getReposForOrg(org: string) {
+  public getReposForOrg(org: string): any {
     return this.makeRequest(`orgs/${org}/repos`);
   }
 
-  getRepoForOrg(org: string, repo: string) {
+  public getRepoForOrg(org: string, repo: string): any {
     return this.makeRequest(`repos/${org}/${repo}`);
   }
 
-  private makeRequest(path: string) {
+  private makeRequest(path: string): any {
     let params = new URLSearchParams();
     params.set('per_page', '100');
     let url = `https://api.github.com/${path}`;

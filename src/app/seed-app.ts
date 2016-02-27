@@ -28,4 +28,8 @@ export class SeedApp {
     this._log.info('constructor')();
   }
 
+  public sayHello(): string {
+    return 'hello';
+  }
+
 }

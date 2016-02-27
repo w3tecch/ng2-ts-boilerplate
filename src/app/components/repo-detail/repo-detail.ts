@@ -13,7 +13,7 @@ import {Github} from '../../services/github';
 })
 
 export class RepoDetail {
-  repoDetails = {};
+  public repoDetails = {};
 
   constructor(routeParams: RouteParams, github: Github) {
     github.getRepoForOrg(routeParams.get('org'), routeParams.get('name'))

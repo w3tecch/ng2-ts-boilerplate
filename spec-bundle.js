@@ -7,5 +7,5 @@
  any file that ends with spec.js and get its path. By passing in true
  we say do this recursively
  */
-var testsContext = require.context('./src/app', true, /.spec.ts$/);
+var testsContext = require.context('./src', true, /.spec.ts$/);
 testsContext.keys().forEach(testsContext);

@@ -24,7 +24,7 @@ export class RepoBrowser {
   constructor(private router: Router, private github: Github) {
   }
 
-  searchForOrg(orgName: string) {
+  public searchForOrg(orgName: string): any {
     this.github.getOrg(orgName)
       .subscribe(({name}) => {
         console.log(name);
