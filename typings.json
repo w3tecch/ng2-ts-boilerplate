@@ -1,0 +1,9 @@
+{
+  "name": "ng2-seed",
+  "dependencies": {},
+  "devDependencies": {},
+  "ambientDependencies": {
+    "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts#1914a00b3c740348dae407ee0d2be89b0b58ad7f",
+    "sinon": "github:DefinitelyTyped/DefinitelyTyped/sinon/sinon.d.ts#6e7d83167d86d857817bd492786f8304f5c4a0e4"
+  }
+}
