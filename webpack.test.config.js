@@ -1,14 +1,4 @@
-///**
-// * Webpack config for builds
-// */
-//module.exports = require('./webpack.make')({
-//  BUILD: false,
-//  TEST: true
-//});
-
-// @AngularClass
-
-var helpers = require(process.cwd() + '/webpack.helpers.js');
+var helpers = require('./helpers');
 
 // Webpack Plugins
 var ProvidePlugin = require('webpack/lib/ProvidePlugin');
