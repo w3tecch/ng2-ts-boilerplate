@@ -1,6 +1,10 @@
+.idea/
 /node_modules/
 /dist/
-npm-debug.log
-.idea
-.vcode
+/coverage/
 /docs/
+/typings/
+
+npm-debug.log
+.vcode
+src/config.json

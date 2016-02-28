@@ -6,6 +6,8 @@ import {About} from './components/about/about';
 import {RepoBrowser} from './components/repo-browser/repo-browser';
 import Logger from './utils/logger.service';
 
+import {AppConfig} from './app-config.ts';
+
 @Component({
   selector: 'seed-app',
   providers: [],
@@ -25,7 +27,7 @@ export class SeedApp {
   private _log: Logger = new Logger('SeedAppTest');
 
   constructor() {
-    this._log.info('constructor')();
+    this._log.info('constructor')(AppConfig);
   }
 
   public sayHello(): string {
