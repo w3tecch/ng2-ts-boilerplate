@@ -3,5 +3,5 @@
   "NAME": "Test",
   "VERSION": "0.0.0",
   "API_URL": "http://",
-  "LOG_LEVEL": "error"
+  "LOG_LEVEL": ""
 }

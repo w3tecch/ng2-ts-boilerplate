@@ -5,7 +5,7 @@ export interface IAppConfig {
   NAME: string;
   VERSION: string;
   API_URL: string;
-  LOGGER: string[];
+  LOG_LEVEL: string;
 }
 
 export const AppConfig: IAppConfig = {
@@ -13,5 +13,5 @@ export const AppConfig: IAppConfig = {
   NAME: jsonConfig.NAME,
   VERSION: jsonConfig.VERSION,
   API_URL: jsonConfig.API_URL,
-  LOGGER: jsonConfig.LOGGER,
+  LOG_LEVEL: jsonConfig.LOG_LEVEL,
 };
