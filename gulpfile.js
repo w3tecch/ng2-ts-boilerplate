@@ -1,8 +1,9 @@
-var helpers = require(process.cwd() + '/webpack.helpers.js');
 var gulp = require('gulp');
 var typedoc = require('gulp-typedoc');
 var connect = require('gulp-connect');
 var taskListing = require('gulp-task-listing');
+
+var helpers = require('./helpers');
 
 /**
  * TASKLISTING

@@ -31,6 +31,11 @@ TODO: Description
 npm run start
 ```
 
+### Generate docs and start the docs server
+```
+npm run docs
+```
+
 ### Run test
 ```
 npm run test

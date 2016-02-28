@@ -7,6 +7,7 @@
     "server": "npm run server:dev",
     "server:dev": "webpack-dev-server --progress --profile --colors --display-error-details --display-cached  --content-base src/ --env dev",
     "server:prod": "http-server dist --cors",
+    "docs": "gulp docs",
     "build": "npm run build:dev",
     "build:dev": "webpack --progress --profile --colors --display-error-details --display-cached",
     "build:prod": "webpack --config webpack.build.config.js --progress --profile --colors --display-error-details --display-cached",
