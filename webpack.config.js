@@ -5,8 +5,8 @@ var path = require('path');
 var helpers = require('./helpers');
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-//var BuildConfigPlugin = require('./build-config');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+var BuildConfigPlugin = require('./build-config');
+//var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 
@@ -41,7 +41,7 @@ module.exports = helpers.validate({
   },
 
   resolve: {
-    extensions: ['', '.ts', '.js']
+    extensions: ['', '.ts', '.js', '.json']
   },
 
   module: {
@@ -91,14 +91,14 @@ module.exports = helpers.validate({
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
-    new CopyWebpackPlugin([
-      {from: './src/assets/configs/dev.json', to: 'config.json'}
-    ])
-    //new BuildConfigPlugin({
-    //  env: 'dev',
-    //  from: './src/assets/configs/[env].json',
-    //  to: './src/config.json'
-    //})
+    //new CopyWebpackPlugin([
+    //  {from: './src/assets/configs/dev.json', to: 'config.json'}
+    //]),
+    new BuildConfigPlugin({
+      env: helpers.getEnv(),
+      from: './src/assets/configs/[env].json',
+      to: './src/config.json'
+    })
   ],
 
   postcss: [

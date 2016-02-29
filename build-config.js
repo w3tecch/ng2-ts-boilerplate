@@ -2,7 +2,7 @@ var fs = require('fs-extra');
 var merge = require('lodash.merge');
 var chalk = require('chalk');
 
-var idx = 0;
+//var idx = 0;
 
 function BuildConfigPlugin(options) {
   this.options = merge({}, {
@@ -21,14 +21,13 @@ BuildConfigPlugin.prototype = {
 
     fs.copy(self.options.from.replace('[env]', self.options.env), self.options.to, function (err) {
       if (err) {
-        console.log(chalk.red(' build-config: ERROR'));
+        console.warn(chalk.red('build-config: ERROR'));
         console.error(err);
       } else {
-        console.log(chalk.green(' build-config: [' + self.options.env + '] ' + self.options.from + self.options.to));
+        console.log(chalk.green('build-config: [' + self.options.env + '] ' + self.options.from + self.options.to));
       }
       return true;
     });
-
 
     //function done(callback) {
     //  idx++;
