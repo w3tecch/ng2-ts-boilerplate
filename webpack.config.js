@@ -71,7 +71,7 @@ module.exports = helpers.validate({
       //
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?.*$|$)/,
-        loader: 'file'
+        loader: 'url-loader?limit=100000'
       },
       // Support for CSS as raw text
       {
