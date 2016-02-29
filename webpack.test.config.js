@@ -34,12 +34,6 @@ module.exports = helpers.validate({
       {
         test: /\.ts$/,
         loader: 'ts-loader',
-        query: {
-          "compilerOptions": {
-            "noEmitHelpers": true,
-            "removeComments": true,
-          }
-        },
         exclude: [/\.e2e\.ts$/]
       },
       {test: /\.json$/, loader: 'json-loader'},
@@ -79,7 +73,7 @@ module.exports = helpers.validate({
       '__decorate': 'ts-helper/decorate',
       '__awaiter': 'ts-helper/awaiter',
       '__extends': 'ts-helper/extends',
-      '__param': 'ts-helper/param',
+      '__param': 'ts-helper/param'
     })
   ],
   // we need this due to problems with es6-shim
