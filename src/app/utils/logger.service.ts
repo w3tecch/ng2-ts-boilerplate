@@ -1,6 +1,6 @@
 //import * as moment from 'moment'; // same as import moment = require('moment');
 //import moment = require('moment');
-import {AppConfig} from '../app-config';
+import {AppConfig} from '../app.config';
 
 interface ILoggerLevel {
   INFO: number;
