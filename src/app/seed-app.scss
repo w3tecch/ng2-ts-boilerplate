@@ -1,3 +1,12 @@
-* {
-  background: lightblue;
+/**
+ * BOOTSTRAP
+ */
+@import "./../assets/scss/custom-variables";
+@import './../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+/**
+ * APP STYLES
+ */
+h3 {
+  color: red;
 }

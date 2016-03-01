@@ -12,6 +12,8 @@ import {AppConfig} from './app-config.ts';
   selector: 'seed-app',
   providers: [],
   templateUrl: 'app/seed-app.html',
+  styles: [require('./seed-app.scss').toString()],
+  //styleUrls: ['./seed-app.css'],
   directives: [ROUTER_DIRECTIVES],
   pipes: []
 })

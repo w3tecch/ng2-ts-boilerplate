@@ -41,7 +41,7 @@ module.exports = helpers.validate({
   },
 
   resolve: {
-    extensions: ['', '.ts', '.js', '.json']
+    extensions: ['', '.ts', '.js', '.json', '.css', '.html']
   },
 
   module: {
@@ -66,7 +66,8 @@ module.exports = helpers.validate({
       // Allows compiling sass into css
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss!sass')
+        loaders: ['style', 'css?sourceMap', 'sass?sourceMap']
+        //loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss!sass')
       },
       //
       {
@@ -83,6 +84,16 @@ module.exports = helpers.validate({
         test: /\.html$/,
         loader: 'raw-loader',
         exclude: [helpers.root('src/index.html')]
+      },
+      // ASSET LOADER
+      // Reference: https://github.com/webpack/file-loader
+      // Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
+      // Rename the file using the asset hash
+      // Pass along the updated reference to your code
+      // You can add here any file extension you want to get copied to your output
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?.*$|$)/,
+        loader: 'file'
       }
 
     ],
