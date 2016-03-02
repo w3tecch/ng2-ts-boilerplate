@@ -4,7 +4,7 @@ import {Component} from 'angular2/core';
 import {Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'; //Router
 
 import {Home} from './components/home/home';
-import {About} from './components/about/about';
+import {Demo} from './components/demo/demo';
 import Logger from './utils/logger.service';
 
 import {AppConfig} from './app.config.ts';
@@ -20,12 +20,12 @@ import {AppConfig} from './app.config.ts';
 
 @RouteConfig([
   new Route({ path: '/home', component: Home, name: 'Home', useAsDefault: true }),
-  new Route({ path: '/about', component: About, name: 'About' })
+  new Route({ path: '/demo', component: Demo, name: 'Demo' })
 ])
 
 export class AppComponent {
 
-  private _log: Logger = new Logger('SeedAppTest');
+  private _log: Logger = new Logger('AppComponent');
 
   constructor() {
     this._log.info('constructor')(AppConfig);
