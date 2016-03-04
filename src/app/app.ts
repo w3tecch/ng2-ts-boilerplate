@@ -12,7 +12,7 @@ import {AppConfig} from './app.config.ts';
 @Component({
   selector: 'app',
   providers: [],
-  templateUrl: 'app/app.html',
+  template: require('./app.html'),
   styles: [require('./app.scss').toString()],
   directives: [ROUTER_DIRECTIVES],
   pipes: []

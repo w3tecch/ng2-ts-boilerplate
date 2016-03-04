@@ -3,7 +3,7 @@ import {Http} from 'angular2/http';
 
 @Component({
   selector: 'demo',
-  templateUrl: 'app/components/demo/demo.html',
+  template: require('./demo.html'),
   styles: [require('./demo.scss').toString()],
   providers: [],
   directives: [],
