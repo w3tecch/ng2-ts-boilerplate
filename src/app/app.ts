@@ -20,7 +20,7 @@ import {AppConfig} from './app.config.ts';
 
 @RouteConfig([
   new Route({ path: '/home', component: Home, name: 'Home', useAsDefault: true }),
-  new Route({ path: '/demo', component: Demo, name: 'Demo' })
+  new Route({ path: '/demo/...', component: Demo, name: 'Demo' })
 ])
 
 export class AppComponent {
