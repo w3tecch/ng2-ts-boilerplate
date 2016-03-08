@@ -10,10 +10,10 @@ interface ILoggerMethods {
 }
 
 export enum ILoggerLevel {
-  NONE = 0,
-  INFO = 1,
+  NONE  = 0,
+  INFO  = 1,
   DEBUG = 2,
-  WARN = 3,
+  WARN  = 3,
   ERROR = 4,
 }
 
@@ -63,7 +63,7 @@ export default class Logger {
     };
   }
 
-  public debug(message: string, ...args): (...args) => void {
+  public debug(message: string): (...args) => void {
     return (...args) => {
       if (this._level >= ILoggerLevel.DEBUG) {
         this._log(Logger.METHOD.DEBUG, message, ...args);
@@ -71,7 +71,7 @@ export default class Logger {
     };
   }
 
-  public warn(message: string, ...args): (...args) => void {
+  public warn(message: string): (...args) => void {
     return (...args) => {
       if (this._level >= ILoggerLevel.WARN) {
         this._log(Logger.METHOD.WARN, message, ...args);
@@ -79,7 +79,7 @@ export default class Logger {
     };
   }
 
-  public error(message: string, ...args): (...args) => void {
+  public error(message: string): (...args) => void {
     return (...args) => {
       if (this._level >= ILoggerLevel.ERROR) {
         this._log(Logger.METHOD.ERROR, message, ...args);
