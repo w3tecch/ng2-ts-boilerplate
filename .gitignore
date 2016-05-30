@@ -4,6 +4,7 @@
 /coverage/
 /docs/
 /typings/
+/build/
 
 npm-debug.log
 .vcode

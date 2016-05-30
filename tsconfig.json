@@ -12,6 +12,7 @@
   },
   "awesomeTypescriptLoaderOptions": {
     "library": "es5",
+    "resolveGlobs": true,
     "forkChecker": true
   },
   "exclude": [
