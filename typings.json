@@ -1,10 +1,10 @@
 {
-  "name": "ng2-seed",
-  "dependencies": {
-    "es6-promise": "github:typings/typed-es6-promise#9243c53f70fb4909ed7cce3094bec221b9fb6d5f"
-  },
+  "name": "ng2-ts-boilerplate",
+  "dependencies": {},
   "devDependencies": {},
   "globalDependencies": {
+    "node": "registry:dt/node#6.0.0+20160514165920",
+    "core-js": "registry:dt/core-js#0.0.0+20160317120654",
     "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts#1914a00b3c740348dae407ee0d2be89b0b58ad7f",
     "sinon": "github:DefinitelyTyped/DefinitelyTyped/sinon/sinon.d.ts#6e7d83167d86d857817bd492786f8304f5c4a0e4"
   }

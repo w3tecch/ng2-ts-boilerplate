@@ -1,6 +1,6 @@
-import {Component} from 'angular2/core';
-import {Http} from 'angular2/http';
-import {Router, CanDeactivate, ComponentInstruction} from 'angular2/router';
+import {Component} from '@angular/core';
+import {Http} from '@angular/http';
+import {Router, CanDeactivate, ComponentInstruction} from '@angular/router-deprecated';
 
 import Logger from './../../utils/logger.service.ts';
 

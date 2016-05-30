@@ -1,7 +1,7 @@
 // TODO: https://github.com/auth0/angular2-authentication-sample/tree/master/src
 
-import {Component} from 'angular2/core';
-import {Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'; //Router
+import {Component} from '@angular/core';
+import {Route, RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated'; //Router
 
 import { Home } from './components/home/home.ts';
 import { Demo } from './components/demo/demo.ts';

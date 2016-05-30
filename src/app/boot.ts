@@ -1,14 +1,17 @@
-import 'angular2/bundles/angular2-polyfills';
+import '@angular/platform-browser-dynamic';
+import '@angular/core';
+import '@angular/http';
+import '@angular/router-deprecated';
 
-import 'angular2/platform/browser';
-import 'angular2/core';
-import 'angular2/http';
-import 'angular2/router';
+import 'reflect-metadata';
+import 'rxjs';
+import 'zone.js/dist/zone';
+import 'zone.js/dist/long-stack-trace-zone';
 
-import {bootstrap} from 'angular2/platform/browser';
-import {FORM_PROVIDERS} from 'angular2/common';
-import {ROUTER_PROVIDERS} from 'angular2/router';
-import {HTTP_PROVIDERS} from 'angular2/http';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {FORM_PROVIDERS} from '@angular/common';
+import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
+import {HTTP_PROVIDERS} from '@angular/http';
 
 import {AppComponent} from './app.ts';
 
