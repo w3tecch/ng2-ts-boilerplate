@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 import {Http} from 'angular2/http';
 import {Router, CanDeactivate, ComponentInstruction} from 'angular2/router';
 
-import Logger from './../../utils/logger.service';
+import Logger from './../../utils/logger.service.ts';
 
 @Component({
   selector: 'demo1',

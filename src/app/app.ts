@@ -3,11 +3,11 @@
 import {Component} from 'angular2/core';
 import {Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'; //Router
 
-import {Home} from './components/home/home';
-import {Demo} from './components/demo/demo';
-import Logger from './utils/logger.service';
+import { Home } from './components/home/home.ts';
+import { Demo } from './components/demo/demo.ts';
+import Logger from './utils/logger.service.ts';
 
-import {AppConfig} from './app.config.ts';
+import AppConfig from './app.config.ts';
 
 @Component({
   selector: 'app',

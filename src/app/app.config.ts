@@ -1,17 +1,26 @@
-let jsonConfig = require('!json!./../config.json');
-
-export interface IAppConfig {
-  ENV: string;
+/**
+ * Environment Config
+ */
+interface IAppConfigEnv {
   NAME: string;
-  VERSION: string;
   API_URL: string;
   LOG_LEVEL: string;
 }
 
-export const AppConfig: IAppConfig = {
-  ENV: jsonConfig.ENV,
-  NAME: jsonConfig.NAME,
-  VERSION: jsonConfig.VERSION,
-  API_URL: jsonConfig.API_URL,
-  LOG_LEVEL: jsonConfig.LOG_LEVEL,
+declare var NAME: string;
+declare var VERSION: string;
+declare var ENV: IAppConfigEnv;
+
+export interface IAppConfig {
+  NAME: string;
+  VERSION: string;
+  ENV: IAppConfigEnv;
+}
+
+const AppConfig: IAppConfig = {
+  NAME: NAME,
+  VERSION: VERSION,
+  ENV: ENV
 };
+
+export default AppConfig;

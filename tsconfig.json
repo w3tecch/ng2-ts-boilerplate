@@ -10,17 +10,19 @@
     "removeComments": true,
     "noLib": false
   },
+  "awesomeTypescriptLoaderOptions": {
+    "library": "es5",
+    "forkChecker": true
+  },
   "exclude": [
-    "node_modules",
-    "typings/main.d.ts",
-    "typings/main"
+    "node_modules"
   ],
   "filesGlob": [
     "./src/**/*.ts",
     "./test/**/*.ts",
     "!./node_modules/**/*.ts",
-    "src/custom_typings.d.ts",
-    "typings/browser.d.ts"
+    "typings-custom/module.d.ts",
+    "typings/index.d.ts"
   ],
   "compileOnSave": false,
   "buildOnSave": false,
