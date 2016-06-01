@@ -1,12 +1,12 @@
+import 'zone.js/dist/zone';
+import 'zone.js/dist/long-stack-trace-zone';
+import 'reflect-metadata';
+
 import '@angular/platform-browser-dynamic';
 import '@angular/core';
 import '@angular/http';
 import '@angular/router-deprecated';
-
-import 'reflect-metadata';
 import 'rxjs';
-import 'zone.js/dist/zone';
-import 'zone.js/dist/long-stack-trace-zone';
 
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {FORM_PROVIDERS} from '@angular/common';
