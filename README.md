@@ -96,7 +96,7 @@ projectRoot/
   ```
 
 #Supporter
-<a href="https://www.browserstack.com"><img src="https://cdn.rawgit.com/w3tecch/ng2-ts-boilerplate/browserstack/supporters/browserStack.svg" height="75" /></a>
+<a href="https://www.browserstack.com"><img src="https://cdn.rawgit.com/w3tecch/ng2-ts-boilerplate/develop/supporters/browserStack.svg" height="75" /></a>
 
 # License
  [MIT](/LICENSE)
