@@ -1,6 +1,6 @@
 //import * as moment from 'moment'; // same as import moment = require('moment');
 //import moment = require('moment');
-import {AppConfig} from '../app.config';
+import AppConfig from '../app.config.ts';
 
 interface ILoggerMethods {
   INFO: string;
@@ -29,7 +29,7 @@ export default class Logger {
   private _level: number = ILoggerLevel.NONE;
 
   constructor(private _className: string) {
-    switch (AppConfig.LOG_LEVEL.toLowerCase()) {
+    switch (AppConfig.ENV.LOG_LEVEL.toLowerCase()) {
       case Logger.METHOD.INFO:
         this._level = ILoggerLevel.INFO;
         break;

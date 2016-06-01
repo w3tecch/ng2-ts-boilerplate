@@ -1,9 +1,9 @@
-import {Component} from 'angular2/core';
-import {Http} from 'angular2/http';
-import {Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'; //Router
+import {Component} from '@angular/core';
+import {Http} from '@angular/http';
+import {Route, RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated'; //Router
 
-import {Demo1} from './../demo1/demo1';
-import {Demo2} from './../demo2/demo2';
+import {Demo1} from './../demo1/demo1.ts';
+import {Demo2} from './../demo2/demo2.ts';
 
 @Component({
   selector: 'demo',
