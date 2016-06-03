@@ -9,6 +9,7 @@ const yargs = require('yargs').argv;
 const path = require('path');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const CompressionPlugin = require('compression-webpack-plugin');
+const styleLintPlugin = require('stylelint-webpack-plugin');
 
 const helpers = require(process.cwd() + '/webpack.helpers.js');
 const appConfig = require(process.cwd() + '/app.config.js')(helpers.getEnv(), helpers.getPkg());
@@ -103,7 +104,7 @@ module.exports = function makeWebpackConfig(options) {
    * List: http://webpack.github.io/docs/list-of-loaders.html
    * This handles most of the magic responsible for converting modules
    */
-    // Initialize module
+  // Initialize module
   config.module = {
     preLoaders: [
       {
@@ -184,7 +185,7 @@ module.exports = function makeWebpackConfig(options) {
   /**
    * TSLINT
    */
-    // Other module loader config
+  // Other module loader config
   config.tslint = {
     emitErrors: false,
     failOnHint: false,
@@ -244,6 +245,10 @@ module.exports = function makeWebpackConfig(options) {
   if (!TEST && !BUILD) {
     config.plugins.push(new webpack.HotModuleReplacementPlugin());
     config.plugins.push(new ForkCheckerPlugin());
+    config.plugins.push(new styleLintPlugin({
+      files: './src/**/*.s?(a|c)ss',
+      syntax: 'scss'
+    }));
   }
 
   // Add build specific plugins
@@ -277,7 +282,7 @@ module.exports = function makeWebpackConfig(options) {
         beautify: false, //prod
 
         mangle: {
-          screw_ie8 : true,
+          screw_ie8: true,
           keep_fnames: true
         }, //prod
 
@@ -298,6 +303,12 @@ module.exports = function makeWebpackConfig(options) {
       new CompressionPlugin({
         regExp: /\.css$|\.html$|\.js$|\.map$/,
         threshold: 2 * 1024
+      }),
+
+      new styleLintPlugin({
+        files: './src/**/*.s?(a|c)ss',
+        syntax: 'scss',
+        failOnError: true
       })
     )
 
@@ -330,7 +341,7 @@ module.exports = function makeWebpackConfig(options) {
     host: helpers.getMetadata().host,
     // contentBase: 'src/',
     historyApiFallback: true,
-    watchOptions: {aggregateTimeout: 300, poll: 1000}
+    watchOptions: { aggregateTimeout: 300, poll: 1000 }
   };
 
   config.node = {
