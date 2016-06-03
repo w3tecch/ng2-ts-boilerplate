@@ -1,16 +1,17 @@
 'use strict';
 
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var precss = require('precss');
-var yargs = require('yargs').argv;
-var path = require('path');
-var ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const precss = require('precss');
+const yargs = require('yargs').argv;
+const path = require('path');
+const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+const CompressionPlugin = require('compression-webpack-plugin');
 
-var helpers = require(process.cwd() + '/webpack.helpers.js');
-var appConfig = require(process.cwd() + '/app.config.js')(helpers.getEnv(), helpers.getPkg());
+const helpers = require(process.cwd() + '/webpack.helpers.js');
+const appConfig = require(process.cwd() + '/app.config.js')(helpers.getEnv(), helpers.getPkg());
 
 module.exports = function makeWebpackConfig(options) {
   /**
@@ -18,15 +19,15 @@ module.exports = function makeWebpackConfig(options) {
    * BUILD is for generating minified builds
    * TEST is for generating test builds
    */
-  var BUILD = !!options.BUILD;
-  var TEST = !!options.TEST;
+  const BUILD = !!options.BUILD;
+  const TEST = !!options.TEST;
 
   /**
    * Config
    * Reference: http://webpack.github.io/docs/configuration.html
    * This is the object where all configuration gets set
    */
-  var config = {};
+  let config = {};
 
   /**
    * Entry
@@ -38,6 +39,7 @@ module.exports = function makeWebpackConfig(options) {
     config.entry = {}
   } else {
     config.entry = {
+      vendor: './src/app/vendor.ts',
       app: './src/app/boot.ts'
     };
   }
@@ -73,6 +75,27 @@ module.exports = function makeWebpackConfig(options) {
     config.debug = true;
     config.devtool = 'eval';
   }
+
+  /**
+   * Resolve extensions
+   * Reference: http://webpack.github.io/docs/configuration.html#module-loaders
+   * List: http://webpack.github.io/docs/list-of-loaders.html
+   * This handles most of the magic responsible for converting modules
+   */
+  config.resolve = {
+    /*
+     * An array of extensions that should be used to resolve modules.
+     *
+     * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
+     */
+    extensions: ['', '.ts', '.js'],
+
+    // Make sure root is src
+    root: '.src',
+
+    // remove other default values
+    modulesDirectories: ['node_modules'],
+  };
 
   /**
    * Loaders
@@ -183,7 +206,7 @@ module.exports = function makeWebpackConfig(options) {
   // If you are using more complicated project structure, consider to specify common chunks manually.
   if (!TEST) {
     config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
+      name: ['app', 'vendor'],
       minChunks: function (module, count) {
         return module.resource && module.resource.indexOf(path.resolve(__dirname, 'src')) === -1;
       }
@@ -237,16 +260,65 @@ module.exports = function makeWebpackConfig(options) {
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
       // Minify all javascript, switch loaders to minimizing mode
       new webpack.optimize.UglifyJsPlugin({
+        // beautify: true, //debug
+        // mangle: false, //debug
+        // dead_code: false, //debug
+        // unused: false, //debug
+        // deadCode: false, //debug
+        // compress: {
+        //   screw_ie8: true,
+        //   keep_fnames: true,
+        //   drop_debugger: false,
+        //   dead_code: false,
+        //   unused: false
+        // }, // debug
+        // comments: true, //debug
+
+        beautify: false, //prod
+
         mangle: {
-          // You can specify all variables that should not be mangled.
-          // For example if your vendor dependency doesn't use modules
-          // and relies on global variables. Most of angular modules relies on
-          // angular global variable, so we should keep it unchanged
-          except: ['$super', '$', 'exports', 'require', 'angular']
-        }
+          screw_ie8 : true,
+          keep_fnames: true
+        }, //prod
+
+        compress: {
+          screw_ie8: true
+        }, //prod
+
+        comments: false //prod
+      }),
+
+      /**
+       * Plugin: CompressionPlugin
+       * Description: Prepares compressed versions of assets to serve
+       * them with Content-Encoding
+       *
+       * See: https://github.com/webpack/compression-webpack-plugin
+       */
+      new CompressionPlugin({
+        regExp: /\.css$|\.html$|\.js$|\.map$/,
+        threshold: 2 * 1024
       })
     )
-  }
+
+    /**
+     * Html loader advanced options
+     *
+     * See: https://github.com/webpack/html-loader#advanced-options
+     */
+    // TODO: Need to workaround Angular 2's html syntax => #id [bind] (event) *ngFor
+    config.htmlLoader = {
+      minimize: true,
+      removeAttributeQuotes: false,
+      caseSensitive: true,
+      customAttrSurround: [
+        [/#/, /(?:)/],
+        [/\*/, /(?:)/],
+        [/\[?\(?/, /(?:)/]
+      ],
+      customAttrAssign: [/\)?\]?=/]
+    }
+  };
 
   /**
    * Dev server configuration
@@ -261,7 +333,13 @@ module.exports = function makeWebpackConfig(options) {
     watchOptions: {aggregateTimeout: 300, poll: 1000}
   };
 
+  config.node = {
+    global: 'window',
+    crypto: 'empty',
+    module: false,
+    clearImmediate: false,
+    setImmediate: false
+  }
 
   return config;
-
 };

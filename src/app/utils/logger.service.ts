@@ -55,7 +55,7 @@ export default class Logger {
     return this._className;
   }
 
-  public info(message: string): (...args) => void {
+  public info<T>(message: string): (...args: T[]) => void {
     return (...args) => {
       if (this._level >= ILoggerLevel.INFO) {
         this._log(Logger.METHOD.INFO, message, ...args);
@@ -63,7 +63,7 @@ export default class Logger {
     };
   }
 
-  public debug(message: string): (...args) => void {
+  public debug<T>(message: string): (...args: T[]) => void {
     return (...args) => {
       if (this._level >= ILoggerLevel.DEBUG) {
         this._log(Logger.METHOD.DEBUG, message, ...args);
@@ -71,7 +71,7 @@ export default class Logger {
     };
   }
 
-  public warn(message: string): (...args) => void {
+  public warn<T>(message: string): (...args: T[]) => void {
     return (...args) => {
       if (this._level >= ILoggerLevel.WARN) {
         this._log(Logger.METHOD.WARN, message, ...args);
@@ -79,7 +79,7 @@ export default class Logger {
     };
   }
 
-  public error(message: string): (...args) => void {
+  public error<T>(message: string): (...args: T[]) => void {
     return (...args) => {
       if (this._level >= ILoggerLevel.ERROR) {
         this._log(Logger.METHOD.ERROR, message, ...args);
@@ -87,7 +87,7 @@ export default class Logger {
     };
   }
 
-  private _log(type: string, message: string, ...args): void {
+  private _log<T>(type: string, message: string, ...args: T[]): void {
     console[type](this.formatter(message), ...args);
   }
 
