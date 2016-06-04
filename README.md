@@ -19,13 +19,14 @@
   ```
   //In your project folder
   npm install
+  typings install
   ```
 
 ## Commands
 
 ### Running the server
 ```
-npm run start
+npm start
 ```
 
 ### Generate docs and start the docs server
@@ -35,7 +36,7 @@ npm run docs
 
 ### Run test
 ```
-npm run test
+npm test
 ```
 
 ### Build the app
@@ -43,10 +44,18 @@ npm run test
 npm run build
 ```
 
+### Build the app
+You can pass configurations to the app like this:
+```
+npm start --env prod
+```
+This can be passed to `start` and `build` command.
+
 # App Structure
 ```
 projectRoot/
    |
+   +-- config/ (configurations)
    +-- dist/ (minified app version will placed by gulp here with the task 'gulp dist')
    +-- docs/ (has the generated docs from typedoc)
    |
@@ -85,14 +94,11 @@ projectRoot/
    |   |   +-- fonts/
    |   |   +-- i18n/
    |   |   +-- images/
-   |   |   +-- configs/
-   |   |       |
-   |   |       +-- <environmentName>.json (config files for the given environment)
    |   |
    |   +-- index.html ("MAIN" - This is the start page of your single-page-application and has some gulp vars)
-   |   +-- favicon.html
    |   +-- boot.ts
    |   +-- vendor.ts
+   +-- typings-custom/ (custom type definition)
   ```
 
 #Supporter
