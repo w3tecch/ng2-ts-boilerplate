@@ -1,6 +1,6 @@
 {
   "name": "ng2-ts-boilerplate",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A simple starter Angular2 project",
   "scripts": {
     "start": "npm run server:dev",
