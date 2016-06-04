@@ -18,7 +18,7 @@ export class Todo implements OnInit {
 
   constructor() { ; }
 
-  public ngOnInit(): void {
+  public ngOnInit(): Promise<boolean> {
     this.todos.push(
       new TodoModel(1, 'Buy Milk'),
       new TodoModel(2, 'Buy Coffee', true),
@@ -26,6 +26,8 @@ export class Todo implements OnInit {
       new TodoModel(4, 'Go to Barcelona'),
       new TodoModel(5, 'Find Restraut for tody', true)
     );
+
+    return new Promise((resolve, reject) => resolve(true));
   }
 
   public add(): void {
