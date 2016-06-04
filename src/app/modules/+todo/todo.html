@@ -1,13 +1,13 @@
 <div class="container">
   <div class="section">
 
-    <h1 class="center">Todo</h1>
+    <h1 class="center">{{ 'MODULES.TODO.TITLE' | translate }}</h1>
 
     <div class="row">
       <div class="col s6 offset-s3">
         <div class="input-field col s12">
           <input id="new_todo" type="text" class="validate" #input (keyup.enter)="add(input.value)">
-          <label for="new_todo">New todo</label>
+          <label for="new_todo">{{ 'MODULES.TODO.INPUT_LABEL' | translate }}</label>
         </div>
 
         <table>
