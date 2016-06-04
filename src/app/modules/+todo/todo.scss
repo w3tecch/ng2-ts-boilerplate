@@ -1,0 +1,19 @@
+.hidden {
+  display: none;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.delete {
+  opacity: .5;
+}
+
+.delete:hover {
+  opacity: 1;
+}
+
+[type="checkbox"] + label {
+  top: 4px;
+}

@@ -5,6 +5,7 @@ interface IAppConfigEnv {
   NAME: string;
   API_URL: string;
   LOG_LEVEL: string;
+  PRODUCTION_MODE: boolean;
 }
 
 declare var NAME: string;

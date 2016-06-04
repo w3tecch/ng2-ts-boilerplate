@@ -74,7 +74,7 @@ module.exports = function makeWebpackConfig(options) {
     config.devtool = 'source-map';
   } else {
     config.debug = true;
-    config.devtool = 'eval';
+    config.devtool = 'inline-source-map';
   }
 
   /**

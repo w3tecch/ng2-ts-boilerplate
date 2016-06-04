@@ -13,3 +13,6 @@ import '@angular/router-deprecated';
 
 // RxJS
 import 'rxjs';
+
+// Others
+import 'materialize-css';
