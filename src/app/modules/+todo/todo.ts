@@ -14,7 +14,7 @@ import TodoModel from './../../models/todo.ts';
 
 export class Todo implements OnInit {
   public todos: TodoModel[] = [];
-  public input: any;
+  public input: string;
 
   constructor() { ; }
 
@@ -28,13 +28,13 @@ export class Todo implements OnInit {
     );
   }
 
-  public add(title: string): void {
-    if (!title) {
+  public add(): void {
+    if (!this.input) {
       return;
     }
     let maxId = _.maxBy(this.todos, (t) => t.id);
-    this.todos.push(new TodoModel((maxId.id + 1), title));
-    this.input.value = undefined;
+    this.todos.unshift(new TodoModel((maxId.id + 1), this.input));
+    this.input = undefined;
   }
 
   public toggle(id: number): void {
