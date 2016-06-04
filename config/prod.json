@@ -1,0 +1,6 @@
+{
+  "NAME": "Production",
+  "API_URL": "http://jsonplaceholder.typicode.com",
+  "LOG_LEVEL": "warn",
+  "PRODUCTION_MODE": true
+}

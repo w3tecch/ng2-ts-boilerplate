@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="section">
+
+    <h1 class="center">{{ 'MODULES.TODO.TITLE' | translate }}</h1>
+
+    <div class="row">
+      <div class="col s6 offset-s3">
+        <div class="input-field col s12">
+          <input id="new_todo" type="text" class="validate" [(ngModel)]="input" (keyup.enter)="add()">
+          <label for="new_todo">{{ 'MODULES.TODO.INPUT_LABEL' | translate }}</label>
+        </div>
+
+        <table>
+          <tbody>
+            <tr *ngFor="let item of todos; let i = index">
+              <td class="left-align" style="width: 50px;">
+                <input type="checkbox" name="completed" [checked]="item.complete == true">
+                <label for="completed" (click)="toggle(item.id)"></label>
+              </td>
+
+              <td [class.completed]="item.complete">
+                <p>
+                  {{ item.title }}
+                </p>
+              </td>
+
+              <td class="right-align">
+                <a class="btn-floating btn-small waves-effect waves-light delete" (click)="remove(item.id)">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <br><br>
+
+  <div class="section">
+
+  </div>
+</div>

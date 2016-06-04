@@ -1,0 +1,53 @@
+<!--<h3>Angular2 Seed</h3>
+<div>
+	<a [routerLink]="['Home']">Home</a>
+	<a [routerLink]="['Demo']">Demo</a>
+</div>
+<div>
+	<router-outlet></router-outlet>
+</div>-->
+
+<nav class="light-blue lighten-1" role="navigation">
+	<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">{{ 'SITE_TITLE' | translate }}</a>
+		<ul class="right hide-on-med-and-down">
+			<li><a [routerLink]="['/home']">{{ 'MODULES.HOME.TITLE' | translate }}</a></li>
+			<li><a [routerLink]="['/todos']">{{ 'MODULES.TODO.TITLE' | translate }}</a></li>
+		</ul>
+
+		<ul id="nav-mobile" class="side-nav">
+			<li><a [routerLink]="['/home']">{{ 'MODULES.HOME.TITLE' | translate }}</a></li>
+			<li><a [routerLink]="['/todos']">{{ 'MODULES.TODO.TITLE' | translate }}</a></li>
+		</ul>
+		<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+	</div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="page-footer orange">
+	<div class="container">
+		<div class="row">
+			<div class="col l9 s12">
+				<h5 class="white-text">{{ 'MODULES.HOME.PACKAGE.TITLE' | translate }}</h5>
+				<p class="grey-text text-lighten-4">{{ 'MODULES.HOME.PACKAGE.DESC' | translate }}</p>
+
+
+			</div>
+			<div class="col l3 s12">
+				<h5 class="white-text">{{ 'MODULES.HOME.LIBS.TITLE' | translate }}</h5>
+				<ul>
+					<li><a class="white-text" href="https://github.com/ocombe/ng2-translate">{{ 'MODULES.HOME.LIBS.NG2T' | translate }}</a></li>
+					<li><a class="white-text" href="https://design.google.com/icons/">{{ 'MODULES.HOME.LIBS.MDI' | translate }}</a></li>
+					<li><a class="white-text" href="http://momentjs.com/">{{ 'MODULES.HOME.LIBS.MOMENT' | translate }}</a></li>
+					<li><a class="white-text" href="http://reactivex.io/">{{ 'MODULES.HOME.LIBS.RX' | translate }}</a></li>
+					<li><a class="white-text" href="https://github.com/zloirock/core-js">{{ 'MODULES.HOME.LIBS.CORE' | translate }}</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+		</div>
+	</div>
+</footer>

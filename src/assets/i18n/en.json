@@ -1,0 +1,24 @@
+{
+    "SITE_TITLE": "ng2-ts-boilerplate",
+    "MODULES": {
+      "HOME": {
+        "TITLE": "Home",
+        "LIBS": {
+          "TITLE": "Used libraries",
+          "NG2T": "ng2 Translate",
+          "MDI": "Material Design Icons",
+          "MOMENT": "Moment.js",
+          "RX": "rxjs",
+          "CORE": "core.js"
+        },
+        "PACKAGE": {
+          "TITLE": "Package",
+          "DESC": "This package is built on Webpack and delivers a full set of tools from developing phase to production bundling."
+        }
+      },
+      "TODO": {
+        "TITLE": "Todo",
+        "INPUT_LABEL": "New todo"
+      }
+    }
+}
