@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/w3tecch/ng2-ts-boilerplate.svg?branch=master)](https://travis-ci.org/hw3tecch/ng2-ts-boilerplate)
 [![Dependency Status](https://david-dm.org/w3tecch/ng2-ts-boilerplate.svg)](https://david-dm.org/w3tecch/ng2-ts-boilerplate)
 [![devDependency Status](https://david-dm.org/w3tecch/ng2-ts-boilerplate/dev-status.svg)](https://david-dm.org/w3tecch/ng2-ts-boilerplate#info=devDependencies)
+[![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/dweber019/angular2-typescript-with-webpack)
 
 # Getting Started
 
