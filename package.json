@@ -42,7 +42,7 @@
     "@angular/router-deprecated": "2.0.0-rc.1",
     "@angular/upgrade": "2.0.0-rc.1",
     "core-js": "^2.4.0",
-    "jquery": "^2.2.4",
+    "jquery": "^3.0.0",
     "lodash": "^4.13.1",
     "material-design-icons": "2.2.1",
     "materialize-css": "^0.97.6",
