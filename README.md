@@ -16,11 +16,9 @@
   ```
 
 ## Dependencies
-1. Install all dependencies
+1. Navigate to your project folder to install all dependencies
   ```
-  //In your project folder
   npm install
-  typings install
   ```
 
 ## Commands

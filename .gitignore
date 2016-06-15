@@ -7,5 +7,5 @@
 /build/
 
 npm-debug.log
-.vcode
+.vscode
 src/config.json

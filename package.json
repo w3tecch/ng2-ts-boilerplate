@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A simple starter Angular2 project",
   "scripts": {
+    "install": "typings install",
     "start": "npm run server:dev",
     "server": "npm run server:dev",
     "server:dev": "./node_modules/.bin/webpack-dev-server --host 0.0.0.0 --progress --profile --colors --display-error-details --inline --content-base src/ --env",
@@ -23,9 +24,25 @@
   },
   "keywords": [
     "Angular2",
+    "TypeScript",
+    "webpack",
+    "boilerplate",
+    "w3tec.ch",
     "ng2-ts-boilerplate"
   ],
-  "author": "David Weber <david.weber@w3tec.ch>",
+  "author": "w3tec.ch <info@w3tec.ch>",
+  "contributors": [
+    {
+      "name": "David Weber",
+      "email": "david.weber@w3tec.ch",
+      "url": "https://github.com/dweber019"
+    },
+    {
+      "name": "Gery Hirschfeld",
+      "email": "gery.hirschfeld@w3tec.ch",
+      "url": "https://github.com/hirsch88"
+    }
+  ],
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/w3tecch/ng2-ts-boilerplate/issues"
@@ -55,7 +72,6 @@
   "devDependencies": {
     "assert": "^1.4.0",
     "awesome-typescript-loader": "^1.0.0",
-    "bootstrap-sass": "^3.3.6",
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
     "chalk": "^1.1.3",
