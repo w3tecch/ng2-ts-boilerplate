@@ -116,7 +116,7 @@
     "precss": "^1.4.0",
     "protractor": "^3.3.0",
     "raw-loader": "^0.5.1",
-    "sass-loader": "^3.2.1",
+    "sass-loader": "^4.0.0",
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0",
     "source-map-loader": "^0.1.5",
