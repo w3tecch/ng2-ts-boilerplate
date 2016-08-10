@@ -108,7 +108,7 @@
     "karma-webpack": "^1.7.0",
     "lodash": "^4.13.1",
     "lodash.merge": "^4.4.0",
-    "mocha": "^2.5.3",
+    "mocha": "^3.0.2",
     "node-sass": "^3.8.0",
     "phantomjs-polyfill": "0.0.2",
     "phantomjs-prebuilt": "^2.1.7",
