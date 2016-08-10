@@ -83,7 +83,7 @@
     "file-loader": "^0.9.0",
     "fs-extra": "^0.30.0",
     "gulp": "^3.9.1",
-    "gulp-connect": "^4.0.0",
+    "gulp-connect": "^5.0.0",
     "gulp-karma": "0.0.5",
     "gulp-task-listing": "^1.0.1",
     "gulp-typedoc": "^2.0.0",
