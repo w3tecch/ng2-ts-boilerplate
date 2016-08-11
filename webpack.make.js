@@ -103,7 +103,8 @@ module.exports = function makeWebpackConfig(options) {
     modulesDirectories: ['node_modules'],
 
     alias: {
-      npm: __dirname + '/node_modules'
+      npm: __dirname + '/node_modules',
+      jquery: 'jquery/src/jquery'
     }
   };
 
@@ -145,14 +146,22 @@ module.exports = function makeWebpackConfig(options) {
       // Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
       // Rename the file using the asset hash
       // Pass along the updated reference to your code
-      // You can add here any file extension you want to get copied to your output
+      // You can add here any file extensioxn you want to get copied to your output
       {
         test: /\.(png|jpg|jpeg|ico|gif|svg|woff|woff2|ttf|eot)(\?.*$|$)/,
         loader: 'url-loader?limit=20000'
       },
       {
-        test: require.resolve("jquery"),
-        loader: 'expose?$!expose?jQuery'
+        test: require.resolve('jquery'),
+        loader: 'expose?jQuery!expose?$'
+      },
+      // {
+      //   test: require.resolve('hammerjs'),
+      //   loader: 'expose?Hammer'
+      // },
+      {
+        test: require.resolve('materialize-css'),
+        loader: 'imports?jQuery=jquery,$=jquery,this=>window'
       }
     ]
   };
@@ -212,12 +221,12 @@ module.exports = function makeWebpackConfig(options) {
   // Adds the app config to the app
   config.plugins.push(new webpack.DefinePlugin(appConfig));
 
-  // config.plugins.push(new webpack.ProvidePlugin({
-  //   $: 'jquery',
-  //   jQuery: 'jquery'
-  //   // 'window.$': 'jquery',
-  //   // 'window.jQuery': 'jquery',
-  // }));
+  config.plugins.push(new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+    hammerjs: 'hammerjs',
+    Hammer: 'hammerjs/hammer'
+  }));
 
   // Automatically move all modules defined outside of application directory to vendor bundle.
   // If you are using more complicated project structure, consider to specify common chunks manually.

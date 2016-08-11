@@ -16,4 +16,5 @@ import 'rxjs';
 
 // Others
 import 'jquery';
+import 'hammerjs';
 import 'materialize-css';

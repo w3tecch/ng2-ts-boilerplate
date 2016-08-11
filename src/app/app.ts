@@ -1,6 +1,6 @@
 // TODO: https://github.com/auth0/angular2-authentication-sample/tree/master/src
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit} from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
 
@@ -8,17 +8,28 @@ import AppConfig from './app.config.ts';
 
 @Component({
   selector: 'app',
-  providers: [ TranslateService ],
+  providers: [TranslateService],
   template: require('./app.html'),
   styles: [require('./app.scss').toString()],
-  directives: [ ROUTER_DIRECTIVES ],
-  pipes: [ TranslatePipe ]
+  directives: [ROUTER_DIRECTIVES],
+  pipes: [TranslatePipe]
 })
-export class AppComponent implements OnInit {
+
+
+export class AppComponent implements OnInit, AfterViewInit {
+
+  // @ViewChild('bubu') bubu: ElementRef;
 
   constructor(
     private translate: TranslateService
   ) { }
+
+  public ngAfterViewInit(): void {
+    console.log('ngAfterViewInit', jQuery);
+    // let bubu1 = this.bubu.nativeElement;
+    // $('.button-collapse-side-nav')['sideNav']();
+    window['jQuery']('.button-collapse-side-nav').sideNav();
+  }
 
   public ngOnInit(): void {
 
@@ -28,11 +39,6 @@ export class AppComponent implements OnInit {
 
     // Print configuration to console
     console.log('App config: ', AppConfig);
-
-
-    $('.button-collapse-side-nav')['sideNav']();
-    // $('.button-collapse').sideNav();
-    // $('.asdf').add
 
   }
 
