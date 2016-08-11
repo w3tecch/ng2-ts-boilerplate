@@ -26,9 +26,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   public ngAfterViewInit(): void {
     console.log('ngAfterViewInit', jQuery);
-    // let bubu1 = this.bubu.nativeElement;
-    // $('.button-collapse-side-nav')['sideNav']();
-    // window['jQuery']('.button-collapse-side-nav').sideNav();
     jQuery('.button-collapse-side-nav').sideNav();
   }
 
