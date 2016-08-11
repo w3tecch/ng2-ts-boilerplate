@@ -7,6 +7,8 @@
   "globalDependencies": {
     "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts#1914a00b3c740348dae407ee0d2be89b0b58ad7f",
     "core-js": "registry:dt/core-js#0.0.0+20160317120654",
+    "jquery": "registry:dt/jquery#1.10.0+20160704162008",
+    "materialize-css": "registry:dt/materialize-css#0.97.5+20160628040906",
     "node": "registry:dt/node#6.0.0+20160514165920",
     "sinon": "github:DefinitelyTyped/DefinitelyTyped/sinon/sinon.d.ts#6e7d83167d86d857817bd492786f8304f5c4a0e4"
   }

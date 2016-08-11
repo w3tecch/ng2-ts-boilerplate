@@ -15,4 +15,6 @@ import '@angular/router';
 import 'rxjs';
 
 // Others
+require('expose?$!expose?jQuery!jquery');
 import 'materialize-css';
+//require('materialize-css/js/init.js'); // Remove this line if you like to automatically initialize js components

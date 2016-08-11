@@ -96,6 +96,10 @@ module.exports = function makeWebpackConfig(options) {
 
     // remove other default values
     modulesDirectories: ['node_modules'],
+
+    alias: {
+      jquery: require.resolve("jquery")
+    }
   };
 
   /**
@@ -140,10 +144,6 @@ module.exports = function makeWebpackConfig(options) {
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?.*$|$)/,
         loader: 'url-loader?limit=20000'
-      },
-      {
-        test: require.resolve("jquery"),
-        loader: 'expose?$!expose?jQuery'
       }
     ]
   };
@@ -283,7 +283,8 @@ module.exports = function makeWebpackConfig(options) {
 
         mangle: {
           screw_ie8: true,
-          keep_fnames: true
+          keep_fnames: true,
+          except: ['$super', '$', 'jQuery', 'exports', 'require', 'Materialize']
         }, //prod
 
         compress: {

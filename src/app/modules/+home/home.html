@@ -12,6 +12,25 @@
 		<br><br>
 
 	</div>
+
+    <a class="btn" onclick="Materialize.toast('I am a toast', 4000)">Toast!</a>
+    <a class="btn" (click)="toast()">Programm Toast!</a>
+    <a class="btn" (click)="openModal()">open Modal!</a>
+
+    <ul id="slide-out" class="side-nav">
+      <li><div class="userView">
+        <a><span class="white-text name">John Doe</span></a>
+        <a><span class="white-text name">John Doe</span></a>
+        <a><span class="white-text email">jdandturk@gmail.com</span></a>
+      </div></li>
+      <li><a ><i class="material-icons">cloud</i>First Link With Icon</a></li>
+      <li><a>Second Link</a></li>
+      <li><div class="divider"></div></li>
+      <li><a class="subheader">Subheader</a></li>
+      <li><a class="waves-effect">Third Link With Waves</a></li>
+    </ul>
+    <a data-activates="slide-out" id="sideNavTest" class="button-collapse"><i class="material-icons">menu</i></a>
+
 </div>
 
 <div class="container">
