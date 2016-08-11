@@ -15,4 +15,5 @@ import '@angular/router';
 import 'rxjs';
 
 // Others
+import 'jquery';
 import 'materialize-css';

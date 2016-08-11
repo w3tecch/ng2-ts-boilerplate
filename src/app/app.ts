@@ -28,6 +28,12 @@ export class AppComponent implements OnInit {
 
     // Print configuration to console
     console.log('App config: ', AppConfig);
+
+
+    $('.button-collapse-side-nav')['sideNav']();
+    // $('.button-collapse').sideNav();
+    // $('.asdf').add
+
   }
 
   public sayHello(): string {

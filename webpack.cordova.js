@@ -2,9 +2,9 @@
  * Webpack config for builds
  */
 module.exports = require('./webpack.make')({
-  CORDOVA: false,
-  BUILD: true,
+  CORDOVA: true,
+  BUILD: false,
   TEST: false,
-  PUBLICPATH: '/',
-  TARGET: 'dist'
+  PUBLICPATH: false,
+  TARGET: 'www'
 });

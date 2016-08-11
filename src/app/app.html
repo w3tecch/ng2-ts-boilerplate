@@ -9,9 +9,26 @@
 			<li><a [routerLink]="['/home']">{{ 'MODULES.HOME.TITLE' | translate }}</a></li>
 			<li><a [routerLink]="['/todos']">{{ 'MODULES.TODO.TITLE' | translate }}</a></li>
 		</ul>
-		<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+		<a href="#" data-activates="nav-mobile" class="button-collapse-side-nav"><i class="material-icons">menu</i></a>
 	</div>
 </nav>
+
+
+<!--<nav class="light-blue lighten-1" role="navigation">
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo">{{ 'SITE_TITLE' | translate }}</a>
+		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		<ul class="right hide-on-med-and-down">
+			<li><a [routerLink]="['/home']">{{ 'MODULES.HOME.TITLE' | translate }}</a></li>
+			<li><a [routerLink]="['/todos']">{{ 'MODULES.TODO.TITLE' | translate }}</a></li>
+		</ul>
+		<ul class="side-nav" id="mobile-demo">
+			<li><a [routerLink]="['/home']">{{ 'MODULES.HOME.TITLE' | translate }}</a></li>
+			<li><a [routerLink]="['/todos']">{{ 'MODULES.TODO.TITLE' | translate }}</a></li>
+		</ul>
+	</div>
+</nav>-->
+
 
 <router-outlet></router-outlet>
 

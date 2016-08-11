@@ -20,6 +20,7 @@ module.exports = function makeWebpackConfig(options) {
    * BUILD is for generating minified builds
    * TEST is for generating test builds
    */
+  const CORDOVA = !!options.CORDOVA;
   const BUILD = !!options.BUILD;
   const TEST = !!options.TEST;
 
@@ -55,11 +56,15 @@ module.exports = function makeWebpackConfig(options) {
     config.output = {}
   } else {
     config.output = {
-      path: helpers.root('dist'),
+      path: helpers.root(options.TARGET ? options.TARGET : 'dist'),
       filename: BUILD ? '[name].[hash].js' : '[name].bundle.js',
-      sourceMapFilename: 'bundle.map',
-      publicPath: options.PUBLICPATH ? options.PUBLICPATH : '/'
+      sourceMapFilename: 'bundle.map'
     };
+
+    if (!!options.PUBLICPATH) {
+      config.output.publicPath = options.PUBLICPATH ? options.PUBLICPATH : '/';
+    }
+
   }
 
   /**
@@ -96,6 +101,10 @@ module.exports = function makeWebpackConfig(options) {
 
     // remove other default values
     modulesDirectories: ['node_modules'],
+
+    alias: {
+      npm: __dirname + '/node_modules'
+    }
   };
 
   /**
@@ -138,7 +147,7 @@ module.exports = function makeWebpackConfig(options) {
       // Pass along the updated reference to your code
       // You can add here any file extension you want to get copied to your output
       {
-        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?.*$|$)/,
+        test: /\.(png|jpg|jpeg|ico|gif|svg|woff|woff2|ttf|eot)(\?.*$|$)/,
         loader: 'url-loader?limit=20000'
       },
       {
@@ -202,6 +211,13 @@ module.exports = function makeWebpackConfig(options) {
   // Reference: http://webpack.github.io/docs/list-of-plugins.html#defineplugin
   // Adds the app config to the app
   config.plugins.push(new webpack.DefinePlugin(appConfig));
+
+  // config.plugins.push(new webpack.ProvidePlugin({
+  //   $: 'jquery',
+  //   jQuery: 'jquery'
+  //   // 'window.$': 'jquery',
+  //   // 'window.jQuery': 'jquery',
+  // }));
 
   // Automatically move all modules defined outside of application directory to vendor bundle.
   // If you are using more complicated project structure, consider to specify common chunks manually.
