@@ -154,14 +154,6 @@ module.exports = function makeWebpackConfig(options) {
       {
         test: require.resolve('jquery'),
         loader: 'expose?jQuery!expose?$'
-      },
-      // {
-      //   test: require.resolve('hammerjs'),
-      //   loader: 'expose?Hammer'
-      // },
-      {
-        test: require.resolve('materialize-css'),
-        loader: 'imports?jQuery=jquery,$=jquery,this=>window'
       }
     ]
   };
@@ -220,13 +212,6 @@ module.exports = function makeWebpackConfig(options) {
   // Reference: http://webpack.github.io/docs/list-of-plugins.html#defineplugin
   // Adds the app config to the app
   config.plugins.push(new webpack.DefinePlugin(appConfig));
-
-  config.plugins.push(new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery',
-    hammerjs: 'hammerjs',
-    Hammer: 'hammerjs/hammer'
-  }));
 
   // Automatically move all modules defined outside of application directory to vendor bundle.
   // If you are using more complicated project structure, consider to specify common chunks manually.
