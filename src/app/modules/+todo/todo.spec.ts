@@ -1,17 +1,13 @@
-import {
-  beforeEachProviders,
-  inject,
-  it
-} from '@angular/core/testing';
+import {addProviders, inject} from '@angular/core/testing';
 
 // Load the implementations that should be tested
 import { Todo } from './todo.ts';
 
 describe('TodoComponent', () => {
   // provide our implementations or mocks to the dependency injector
-  beforeEachProviders(() => [
+  beforeEach(() => addProviders([
     Todo
-  ]);
+  ]));
 
   it('should have 5 todos initially', inject([Todo], (todo: Todo) => {
       todo.ngOnInit();
