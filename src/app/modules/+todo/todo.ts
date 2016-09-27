@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslatePipe } from 'ng2-translate/ng2-translate';
 
 import * as _ from 'lodash';
 
@@ -8,8 +7,7 @@ import TodoModel from './../../models/todo.ts';
 @Component({
   selector: 'todo',
   template: require('./todo.html'),
-  styles: [require('./todo.scss').toString()],
-  pipes: [ TranslatePipe ]
+  styles: [require('./todo.scss').toString()]
 })
 
 export class Todo implements OnInit {

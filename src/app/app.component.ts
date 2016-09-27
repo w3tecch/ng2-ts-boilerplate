@@ -1,18 +1,15 @@
 // TODO: https://github.com/auth0/angular2-authentication-sample/tree/master/src
 
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
+// import { RouterLink } from '@angular/router';
+import { TranslateService } from 'ng2-translate/ng2-translate';
 
 import AppConfig from './app.config.ts';
 
 @Component({
   selector: 'app',
-  providers: [ TranslateService ],
   template: require('./app.html'),
-  styles: [require('./app.scss').toString()],
-  directives: [ ROUTER_DIRECTIVES ],
-  pipes: [ TranslatePipe ]
+  styles: [require('./app.scss').toString()]
 })
 export class AppComponent implements OnInit {
 

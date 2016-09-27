@@ -5,7 +5,7 @@ import {TRANSLATE_PROVIDERS} from 'ng2-translate';
 import {HTTP_PROVIDERS} from '@angular/http';
 
 // Load the implementations that should be tested
-import { AppComponent } from './app.ts';
+import { AppComponent } from './app.component';
 
 describe('App', () => {
   // provide our implementations or mocks to the dependency injector
