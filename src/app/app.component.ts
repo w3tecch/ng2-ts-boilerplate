@@ -1,7 +1,6 @@
 // TODO: https://github.com/auth0/angular2-authentication-sample/tree/master/src
 
 import { Component, OnInit } from '@angular/core';
-// import { RouterLink } from '@angular/router';
 import { TranslateService } from 'ng2-translate/ng2-translate';
 
 import AppConfig from './utils/environment.service';

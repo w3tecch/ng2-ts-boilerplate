@@ -1,4 +1,3 @@
-/// <reference path="./../../typings-custom/protractor.d.ts"/>
 'use strict';
 
 describe('App', () => {

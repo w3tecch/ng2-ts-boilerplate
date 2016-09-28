@@ -73,6 +73,8 @@ switch (ENV) {
       require('./config/wp-config/config-environment.js')
         ({ env: ENV, name: pkg.name, version: pkg.version }),
 
+      require('./config/wp-config/config-angular-fix.js')(),
+
       require('./config/wp-config/config-notifier.js')
         (metadata.title, { contentImage: path.resolve('src/assets/images/favicon.png') }),
 
@@ -113,12 +115,15 @@ switch (ENV) {
         ({ options: { doTypeCheck: false, compilerOptions: { sourceMap: false, inlineSourceMap: true } } }),
 
       require('@easy-webpack/config-html')(),
+      require('@easy-webpack/config-json')(),
 
       require('@easy-webpack/config-sass')
         ({ allChunks: true, sourceMap: false }),
 
       require('./config/wp-config/config-environment.js')
         ({ env: ENV, name: pkg.name, version: pkg.version }),
+
+      require('./config/wp-config/config-angular-fix.js')(),
 
       require('./config/wp-config/config-notifier.js')
         (metadata.title, { contentImage: path.resolve('src/assets/images/favicon.png') }),
@@ -161,6 +166,8 @@ switch (ENV) {
 
       require('./config/wp-config/config-environment.js')
         ({ env: ENV, name: pkg.name, version: pkg.version }),
+
+      require('./config/wp-config/config-angular-fix.js')(),
 
       require('./config/wp-config/config-notifier.js')
         (metadata.title, { contentImage: path.resolve('src/assets/images/favicon.png') }),
