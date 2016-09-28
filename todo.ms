@@ -6,5 +6,5 @@
 [X] => fix e2e tests
 [X] clean up root directory (move things into config folders)
 [X] add favicon plugin
-[ ] check mangling with angular 2
+[X] check mangling with angular 2
 [ ] add shrinkwrap

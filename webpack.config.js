@@ -61,8 +61,8 @@ switch (ENV) {
     config = generateConfig(
       baseConfig,
 
-      require('@easy-webpack/config-env-production')
-        ({ compress: true }),
+      // require('@easy-webpack/config-env-production')({ compress: true }),
+      require('./config/wp-config/config-env-prod.js')(),
 
       require('@easy-webpack/config-typescript')(),
       require('@easy-webpack/config-html')(),
@@ -97,8 +97,8 @@ switch (ENV) {
       require('./config/wp-config/config-favicon.js')
         (metadata.title,  path.resolve('src/assets/images/favicon.png')),
 
-      /*require('@easy-webpack/config-uglify')
-        ({ debug: false }), Can be enabled when https://github.com/easy-webpack/config-uglify/pull/4 is merged*/
+      require('@easy-webpack/config-uglify')
+        ({ debug: false }),
 
       require('./config/wp-config/config-banner')(banner)
     );
