@@ -56,7 +56,7 @@ module.exports = function karmaConfig (config) {
       type: 'html'
     },
 
-    webpack: require('./webpack.test'),
+    webpack: require('./../../webpack.test'),
 
     webpackMiddleware: {
       noInfo: true,

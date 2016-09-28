@@ -6,6 +6,8 @@
 /typings/
 /build/
 
+config/test-config/build
+
 npm-debug.log
 .vscode
 src/config.json

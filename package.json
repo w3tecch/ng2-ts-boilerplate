@@ -12,10 +12,10 @@
     "build": "npm run build:dev",
     "build:dev": "./node_modules/.bin/webpack --config webpack.build.js --progress --profile --colors --display-error-details --display-cached --env",
     "build:prod": "./node_modules/.bin/webpack --config webpack.build.js --progress --profile --colors --display-error-details --display-cached --env prod",
-    "test": "./node_modules/.bin/karma start",
+    "test": "./node_modules/.bin/karma start config/test-config/karma.conf.js",
     "test:live": "./node_modules/.bin/karma start --auto-watch --no-single-run",
     "webdriver": "./node_modules/protractor/bin/webdriver-manager update",
-    "e2e": "./node_modules/.bin/protractor",
+    "e2e": "./node_modules/.bin/protractor config/test-config/protractor.conf.js",
     "e2e:live": "npm run e2e -- --elementExplorer"
   },
   "repository": {

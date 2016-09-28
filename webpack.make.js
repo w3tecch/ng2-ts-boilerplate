@@ -12,6 +12,8 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const styleLintPlugin = require('stylelint-webpack-plugin');
 
 const helpers = require(process.cwd() + '/webpack.helpers.js');
+
+// TODO: remove later
 const appConfig = require(process.cwd() + '/app.config.js')(helpers.getEnv(), helpers.getPkg());
 
 module.exports = function makeWebpackConfig(options) {
