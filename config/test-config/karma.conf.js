@@ -3,7 +3,7 @@ module.exports = function karmaConfig (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (e.g. files, exclude)
-    basePath: '',
+    basePath: __dirname,
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -13,22 +13,16 @@ module.exports = function karmaConfig (config) {
       'jasmine'
     ],
 
-    client: {
-      args: ['--grep', config.grep || '']
-    },
-
     // list of files to exclude
     exclude: [ ],
 
-    reporters: [
-      // Reference: https://github.com/mlex/karma-spec-reporter
-      // Set reporter to print detailed results to console
-      'spec',
-
-      // Reference: https://github.com/karma-runner/karma-coverage
-      // Output code coverage files
-      'coverage'
-    ],
+    /*
+     * test results reporter to use
+     *
+     * possible values: 'dots', 'progress'
+     * available reporters: https://npmjs.org/browse/keyword/karma-reporter
+     */
+    reporters: [ 'mocha', 'coverage' ], //, 'karma-remap-istanbul' ],
 
     // list of files / patterns to load in the browser
     // we are building the test environment in ./spec-bundle.js
@@ -38,7 +32,7 @@ module.exports = function karmaConfig (config) {
       // Reference: http://webpack.github.io/docs/testing.html
       // Reference: https://github.com/webpack/karma-webpack
       // Convert files with webpack and load sourcemaps
-      'spec-bundle.js': ['webpack', 'sourcemap']
+      'spec-bundle.js': ['coverage', 'webpack', 'sourcemap']
     },
 
     browsers: [
@@ -52,45 +46,32 @@ module.exports = function karmaConfig (config) {
 
     // Configure code coverage reporter
     coverageReporter: {
-      dir: 'build/coverage/',
-      type: 'html'
+      reporters: [{
+        type: 'json',
+        subdir: '.',
+        file: 'coverage-final.json'
+      }]
     },
 
-    webpack: require('./../../webpack.test'),
+    // web server port
+    port: 9876,
 
-    webpackMiddleware: {
-      noInfo: true,
-      stats: {
-        // With console colors
-        colors: true,
-        // add the hash of the compilation
-        hash: true,
-        // add webpack version information
-        version: false,
-        // add timing information
-        timings: true,
-        // add assets information
-        assets: true,
-        // add chunk information
-        chunks: true,
-        // add built modules information to chunk information
-        chunkModules: false,
-        // add built modules information
-        modules: false,
-        // add also information about cached (not built) modules
-        cached: true,
-        // add information about the reasons why modules are included
-        reasons: false,
-        // add the source code of modules
-        source: true,
-        // add details to errors (like resolving log)
-        errorDetails: true,
-        // add the origins of chunks and chunk merging info
-        chunkOrigins: true,
-        // Add messages from child loaders
-        children: false
-      }
-    }
+    // enable / disable colors in the output (reporters and logs)
+    colors: true,
+
+    /*
+     * level of logging
+     * possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+     */
+    logLevel: config.LOG_INFO,
+
+    /**
+     * Load webpack config
+     */
+    webpack: require('../../webpack.config'),
+
+    // Webpack please don't spam the console when running in karma!
+    webpackServer: { noInfo: true }
 
   });
 };
