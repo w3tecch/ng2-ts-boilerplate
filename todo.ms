@@ -7,5 +7,5 @@
 [X] clean up root directory (move things into config folders)
 [X] add favicon plugin
 [X] check mangling with angular 2
-[ ] add shrinkwrap
+[X] add shrinkwrap
 [ ] check file size optimization
