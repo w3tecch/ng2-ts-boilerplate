@@ -5,7 +5,8 @@ exports.config = {
 
   // use `npm run e2e`
   specs: [
-    './../../src/**/*.e2e.ts'
+    './../../src/**/*.e2e.ts',
+    './../../src/**/**.e2e.ts'
   ],
   exclude: [],
 
@@ -16,7 +17,7 @@ exports.config = {
   jasmineNodeOpts: {
     showTiming: true,
     showColors: true,
-    isVerbose: true,
+    isVerbose: false,
     includeStackTrace: false,
     defaultTimeoutInterval: 400000
   },
@@ -31,7 +32,6 @@ exports.config = {
 
   onPrepare: function() {
     browser.ignoreSynchronization = true;
-    require('ts-node').register({ compilerOptions: { module: 'commonjs' }, disableWarnings: true, fast: true });
   },
 
   seleniumServerJar: "node_modules/protractor/selenium/selenium-server-standalone-2.48.2.jar",

@@ -9,7 +9,7 @@ describe('App', () => {
 
   it('should have a title', () => {
     let subject = browser.getTitle();
-    let result  = 'ng2-ts-boilerplate';
+    let result  = 'Angular2 TS Boilerplate';
     expect(subject).toEqual(result);
   });
 

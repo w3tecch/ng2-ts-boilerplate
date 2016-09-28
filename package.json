@@ -1,5 +1,6 @@
 {
   "name": "ng2-ts-boilerplate",
+  "title": "Angular2 TS Boilerplate",
   "version": "1.0.0",
   "description": "A simple starter Angular2 project",
   "scripts": {
