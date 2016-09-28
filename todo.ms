@@ -8,3 +8,4 @@
 [X] add favicon plugin
 [X] check mangling with angular 2
 [ ] add shrinkwrap
+[ ] check file size optimization
