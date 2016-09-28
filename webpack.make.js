@@ -42,8 +42,8 @@ module.exports = function makeWebpackConfig(options) {
     config.entry = {}
   } else {
     config.entry = {
-      vendor: './src/app/vendor.ts',
-      app: './src/app/boot.ts'
+      vendor: './src/vendor.ts',
+      app: './src/boot.ts'
     };
   }
 

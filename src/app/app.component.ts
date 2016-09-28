@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 // import { RouterLink } from '@angular/router';
 import { TranslateService } from 'ng2-translate/ng2-translate';
 
-import AppConfig from './app.config.ts';
+import AppConfig from './services/environment.service';
 
 @Component({
   selector: 'app',
