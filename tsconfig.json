@@ -1,28 +1,37 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "target": "es2015",
+    "module": "es2015",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "removeComments": true,
-    "suppressImplicitAnyIndexErrors": true
+    "moduleResolution": "node",
+    "sourceMap": true
   },
   "awesomeTypescriptLoaderOptions": {
-    "library": "es5",
+    "doTypeCheck": true,
+    "forkChecker": true,
     "resolveGlobs": true,
-    "forkChecker": true
+    "useBabel": true,
+    "useCache": true,
+    "babelOptions": {
+      "presets": [
+        "es2015-loose-native-modules"
+      ]
+    }
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist",
+    "release",
+    "index.js",
+    "webpack.config.js",
+    "config"
   ],
   "filesGlob": [
     "./src/**/*.ts",
     "./test/**/*.ts",
     "!./node_modules/**/*.ts",
-    "typings-custom/module.d.ts",
+    "typings-custom/*.ts",
     "typings/index.d.ts"
   ],
   "compileOnSave": false,

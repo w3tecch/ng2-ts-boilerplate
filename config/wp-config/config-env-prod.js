@@ -71,6 +71,15 @@ module.exports = function production({devtool = 'source-map'} = {}) {
         new WebpackMd5Hash(),
 
         /**
+         * Plugin: LoaderOptionsPlugin
+         * Description: Plugin to set loaders intro minimize mode
+         */
+        new webpack.LoaderOptionsPlugin({
+          minimize: true,
+          debug: false
+        }),
+
+        /**
          * Plugin: DedupePlugin
          * Description: Prevents the inclusion of duplicate code into your bundle
          * and instead applies a copy of the function at runtime.
