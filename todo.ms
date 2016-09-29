@@ -8,5 +8,5 @@
 [X] add favicon plugin
 [X] check mangling with angular 2
 [X] add shrinkwrap
-[ ] PR for easy webpack env-prod
+[X] PR for easy webpack env-prod => https://github.com/easy-webpack/config-env-production/pull/3
 [ ] check file size optimization
