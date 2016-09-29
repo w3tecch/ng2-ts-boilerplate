@@ -80,7 +80,6 @@ switch (ENV) {
 
       require('./config/wp-config/config-globals.js')(),
       require('@easy-webpack/config-fonts-and-images')(),
-      require('@easy-webpack/config-global-bluebird')(),
       require('@easy-webpack/config-global-jquery')(),
       require('@easy-webpack/config-global-regenerator')(),
       require('@easy-webpack/config-generate-index-html')
@@ -129,7 +128,6 @@ switch (ENV) {
         (metadata.title, { contentImage: path.resolve('src/assets/images/favicon.png') }),
 
       require('@easy-webpack/config-fonts-and-images')(),
-      require('@easy-webpack/config-global-bluebird')(),
       require('@easy-webpack/config-global-jquery')(),
       require('@easy-webpack/config-global-regenerator')(),
       require('@easy-webpack/config-generate-index-html')
@@ -174,7 +172,6 @@ switch (ENV) {
 
       require('./config/wp-config/config-globals.js')(),
       require('@easy-webpack/config-fonts-and-images')(),
-      require('@easy-webpack/config-global-bluebird')(),
       require('@easy-webpack/config-global-jquery')(),
       require('@easy-webpack/config-global-regenerator')(),
       require('@easy-webpack/config-generate-index-html')
