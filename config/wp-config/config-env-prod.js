@@ -4,8 +4,8 @@ const webpack = require('webpack');
 /**
  * @param exclude add paths to packages that have problems with their sourcemaps
  */
-module.exports = function production({devtool = 'source-map'} = {}) {
-  const WebpackMd5Hash = require('webpack-md5-hash')
+module.exports = function production({devtool = 'source-map', dedupe = true} = {}) {
+  const WebpackMd5Hash = require('webpack-md5-hash');
 
   return function production() {
     const config = {
@@ -117,6 +117,18 @@ module.exports = function production({devtool = 'source-map'} = {}) {
         // ],
         // customAttrAssign: [/\)?\]?=/]
       }
+    }
+
+    if (dedupe) {
+      /**
+       * Plugin: DedupePlugin
+       * Description: Prevents the inclusion of duplicate code into your bundle
+       * and instead applies a copy of the function at runtime.
+       *
+       * See: https://webpack.github.io/docs/list-of-plugins.html#defineplugin
+       * See: https://github.com/webpack/docs/wiki/optimization#deduplication
+       */
+      config.plugins.push(new webpack.optimize.DedupePlugin());
     }
 
     return config

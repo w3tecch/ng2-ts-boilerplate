@@ -62,7 +62,7 @@ switch (ENV) {
       baseConfig,
 
       // require('@easy-webpack/config-env-production')({ compress: true }),
-      require('./config/wp-config/config-env-prod.js')(),
+      require('./config/wp-config/config-env-prod.js')({ dedupe: false }),
 
       require('@easy-webpack/config-typescript')(),
       require('@easy-webpack/config-html')(),
