@@ -6,7 +6,8 @@
 /typings/
 /build/
 
-config/test-config/build
+config/test-config/coverage
+.awcache
 
 npm-debug.log
 .vscode
